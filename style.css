@@ -1,0 +1,19 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+}
+#chat-box {
+    width: 70%;
+    height: 200px;
+    border: 6px solid #08d6bbb6;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#message-input {
+    width: 65%;
+    padding: 10px;
+    background-color: rgb(213, 184, 240);
+}
+#send-button {
+    padding: 10px;
+}
