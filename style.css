@@ -1,19 +1,29 @@
 body {
     font-family:'Courier New', Courier, monospace;
+    background-color:cadetblue;
 }
 #chat-box {
     width: 70%;
     height: 200px;
-    border: 6px solid #08d6bbb6;
+    background: rgba(191, 138, 212, 0.692);
+    border: 6px solid #081dd69c;
     overflow-y: auto;
     padding: 10px;
+    border-radius: 35px;
     margin-bottom: 10px;
+    
 }
 #message-input {
     width: 65%;
     padding: 10px;
     background-color: rgb(213, 184, 240);
+    line-height: 3;
+    border-radius: 15px;
 }
 #send-button {
     padding: 10px;
+    background-color: rgb(170, 170, 238);
+    width: 85px;
+    height: 85px;
+    border-radius: 45px;
 }

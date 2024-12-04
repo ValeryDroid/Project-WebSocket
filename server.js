@@ -5,12 +5,13 @@ const server = http.createServer();
 const wss = new WebSocket.Server({ server});
 wss.on('connection', (ws) => {
     console.log('Новый пользователь подключён');
-    ws.send('Добро пожаловать в чат!');
+    ws.send(JSON.stringify({text:'Добро пожаловать в чат!'}));
     ws.on('message', (message) => {
-        console.log('Получено сообщение:' , message);
+        let text = JSON.parse(message)
+        console.log('Получено сообщение:' , text.text);
         wss.clients.forEach((client) => {
-            if (client !== ws && client.readyState === WebSocket.OPEN) {
-                client.send(message);
+            if (client.readyState === WebSocket.OPEN) {
+                client.send(JSON.stringify(text));
             }
         });
     });

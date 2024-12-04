@@ -5,7 +5,7 @@ const sendButton = document.getElementById('send-button');
 
 socket.onmessage = (event) => {
     const message = document.createElement('div');
-    message.textContent = event.data;
+    message.textContent = JSON.parse(event.data).text;
     chatBox.appendChild(message);
     chatBox.scrollTop = chatBox.scrollHeight;
 };
@@ -13,7 +13,7 @@ socket.onmessage = (event) => {
 sendButton.onclick = () => {
     const message = messageInput.value;
     if (message) {
-        socket.send(message);
+        socket.send(JSON.stringify({text:message}));
         messageInput.value = '';
     }
 };
